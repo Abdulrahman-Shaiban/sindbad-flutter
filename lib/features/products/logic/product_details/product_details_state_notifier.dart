@@ -1,0 +1,48 @@
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:sindebad/features/products/data/models/product_image.dart';
+
+import '../../data/models/product.dart';
+import 'product_details_state.dart';
+
+class ProductDetailsStateNotifier extends StateNotifier<ProductDetailsState> {
+  ProductDetailsStateNotifier() : super(ProductDetailsInitial());
+
+  Future<void> getProductDetails({required Product product}) async {
+    try {
+      state = ProductDetailsLoading();
+      // final productDetailsResponse =
+      // await _productsRepository.fetchProductDetails(product: product);
+      final productDetailsResponse = await getFakeProductDetails();
+      state = ProductDetailsLoaded(product: productDetailsResponse);
+    } catch (e, s) {
+      state = ProductDetailsError(error: 'Error');
+    }
+  }
+}
+
+getFakeProductDetails() {
+  return Product(
+    id: '1',
+    name: 'مولد متسوبشي 4564 * 66 في كاتم صوت مدمج مع طبلون ',
+    price: '200.67',
+    ratingAverage: 4.6,
+    totalRatingsNumber: 430,
+    description:
+        'مولد متسوبشي 4564 * 66 في كاتم صوت مدمج مع طبلون مولد متسوبشي 4564 * 66 في كاتم صوت مدمج مع طبلون',
+    availableQuantity: 97,
+    subCategoryName: "مولدات",
+    productStatus: "متوفر",
+    supplierName: "اليمن الشامل التجارية",
+    productImages: [
+      ProductImage(
+          imagePath:
+              'image-vector/cosmetic-product-ad-transparent-circle-600w-1777871555.jpg'),
+      ProductImage(
+          imagePath:
+              'image-vector/3d-illustration-various-blank-cosmetic-600w-1730749870.jpg'),
+      ProductImage(
+          imagePath:
+              'image-vector/3d-illustration-green-tea-seed-600w-1782648659.jpg'),
+    ],
+  );
+}

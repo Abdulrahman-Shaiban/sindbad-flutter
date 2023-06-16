@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="69.238" height="68.369" viewBox="0 0 69.238 68.369">
+  <defs>
+    <filter id="Ellipse_19" x="0" y="0" width="69.238" height="68.369" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <clipPath id="clip-path">
+      <ellipse id="Ellipse_21" data-name="Ellipse 21" cx="14.763" cy="16.066" rx="14.763" ry="16.066" transform="translate(0 0)" fill="#fff" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="Group_12584" data-name="Group 12584" transform="translate(9 6)">
+    <g transform="matrix(1, 0, 0, 1, -9, -6)" filter="url(#Ellipse_19)">
+      <ellipse id="Ellipse_19-2" data-name="Ellipse 19" cx="25.619" cy="25.185" rx="25.619" ry="25.185" transform="translate(9 6)" fill="#fff"/>
+    </g>
+    <g id="Mask_Group_4" data-name="Mask Group 4" transform="translate(9.553 10.421)" clip-path="url(#clip-path)">
+      <g id="search" transform="translate(0.334 0.059)">
+        <path id="Path_77" data-name="Path 77" d="M6.732,20.956,5.675,24.9l-3.865.082A15.216,15.216,0,0,1,1.7,10.8h0l3.441.631,1.507,3.42a9.065,9.065,0,0,0,.085,6.1Z" transform="translate(0 -2.598)" fill="#fbbb00"/>
+        <path id="Path_78" data-name="Path 78" d="M35.029,16.264a15.183,15.183,0,0,1-5.415,14.682h0l-4.334-.221L24.667,26.9a9.053,9.053,0,0,0,3.895-4.623H20.44V16.264h14.59Z" transform="translate(-4.917 -3.912)" fill="#518ef8"/>
+        <path id="Path_79" data-name="Path 79" d="M25.271,32.848h0A15.194,15.194,0,0,1,2.384,28.2l4.922-4.029A9.034,9.034,0,0,0,20.323,28.8Z" transform="translate(-0.573 -5.815)" fill="#28b446"/>
+        <path id="Path_80" data-name="Path 80" d="M25.422,3.5,20.5,7.525A9.032,9.032,0,0,0,7.185,12.255L2.237,8.2h0A15.192,15.192,0,0,1,25.422,3.5Z" transform="translate(-0.538)" fill="#f14336"/>
+      </g>
+    </g>
+  </g>
+</svg>
