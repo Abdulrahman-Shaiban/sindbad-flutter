@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:sindebad/core/styles/app_colors.dart';
+import 'package:sindebad/core/styles/size_utils.dart';
 
 import '../../favorites/views/favorites_view.dart';
 import '../../order/views/orders_view.dart';
@@ -41,7 +42,231 @@ class _HomeMenuViewState extends ConsumerState<HomeMenuView> {
     final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
     return Scaffold(
       key: scaffoldKey,
-      drawer: Drawer(child: Container()),
+      drawer: Container(
+        width: MediaQuery.of(context).size.width / 1.4,
+        color: Colors.white,
+        child: Column(
+          children: [
+            Container(
+              height: 23.hsbt0,
+              width: double.infinity,
+              alignment: Alignment.bottomRight,
+              decoration: const BoxDecoration(
+                gradient: LinearGradient(
+                    colors: [Color(0xFF4D93C8), Color(0xDD274A64)],
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter),
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 12),
+                    child: Text(
+                      'أهلاً احمد',
+                      style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                            fontSize: 30,
+                            color: Colors.white,
+                            fontWeight: FontWeight.w500,
+                          ),
+                    ),
+                  ),
+                  Padding(
+                    padding:
+                        const EdgeInsets.only(bottom: 22, left: 12, right: 12),
+                    child: Text(
+                      'ahmed@gmail.com',
+                      style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                            fontSize: 12,
+                            color: Colors.grey.shade50,
+                            fontWeight: FontWeight.w300,
+                          ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(
+              height: 30,
+            ),
+            Padding(
+              padding:
+                  EdgeInsetsDirectional.only(bottom: 3.hsbt0, start: 2.hsbt0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  SvgPicture.asset(
+                    'assets/icons/svg/Pin.svg',
+                    height: 26,
+                    color: Colors.grey.shade700,
+                  ),
+                  const SizedBox(
+                    width: 18,
+                  ),
+                  Text(
+                    'العناوين',
+                    style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                          fontSize: 20,
+                          color: Colors.grey.shade700,
+                        ),
+                    strutStyle: const StrutStyle(
+                      height: 2,
+                      forceStrutHeight: true,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding:
+                  EdgeInsetsDirectional.only(bottom: 3.hsbt0, start: 2.hsbt0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  SvgPicture.asset(
+                    'assets/icons/svg/orders 2.svg',
+                    height: 26,
+                    color: Colors.grey.shade700,
+                  ),
+                  const SizedBox(
+                    width: 18,
+                  ),
+                  Text(
+                    'طلباتي السابقة',
+                    style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                          fontSize: 20,
+                          color: Colors.grey.shade700,
+                        ),
+                    strutStyle: const StrutStyle(
+                      height: 2,
+                      forceStrutHeight: true,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding:
+                  EdgeInsetsDirectional.only(bottom: 3.hsbt0, start: 2.hsbt0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  SvgPicture.asset(
+                    'assets/icons/svg/customer-service.svg',
+                    height: 26,
+                    color: Colors.grey.shade700,
+                  ),
+                  const SizedBox(
+                    width: 18,
+                  ),
+                  Text(
+                    'خدمة العملاء',
+                    style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                          fontSize: 20,
+                          color: Colors.grey.shade700,
+                        ),
+                    strutStyle: const StrutStyle(
+                      height: 2,
+                      forceStrutHeight: true,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding:
+                  EdgeInsetsDirectional.only(bottom: 3.hsbt0, start: 2.hsbt0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  SvgPicture.asset(
+                    'assets/icons/svg/invite.svg',
+                    height: 26,
+                    color: Colors.grey.shade700,
+                  ),
+                  const SizedBox(
+                    width: 18,
+                  ),
+                  Text(
+                    'دعوة صديق',
+                    style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                          fontSize: 20,
+                          color: Colors.grey.shade700,
+                        ),
+                    strutStyle: const StrutStyle(
+                      height: 2,
+                      forceStrutHeight: true,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding:
+                  EdgeInsetsDirectional.only(bottom: 3.hsbt0, start: 2.hsbt0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  SvgPicture.asset(
+                    'assets/icons/svg/rate.svg',
+                    height: 26,
+                    color: Colors.grey.shade700,
+                  ),
+                  const SizedBox(
+                    width: 18,
+                  ),
+                  Text(
+                    'تقييم التطبيق',
+                    style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                          fontSize: 20,
+                          color: Colors.grey.shade700,
+                        ),
+                    strutStyle: const StrutStyle(
+                      height: 2,
+                      forceStrutHeight: true,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding:
+                  EdgeInsetsDirectional.only(bottom: 3.hsbt0, start: 2.hsbt0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  SvgPicture.asset(
+                    'assets/icons/svg/exite.svg',
+                    height: 26,
+                    color: Colors.grey.shade700,
+                  ),
+                  const SizedBox(
+                    width: 18,
+                  ),
+                  Text(
+                    'خروج',
+                    style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                          fontSize: 20,
+                          color: Colors.grey.shade700,
+                        ),
+                    strutStyle: const StrutStyle(
+                      height: 2,
+                      forceStrutHeight: true,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
       body: pages.elementAt(ref.watch(homeMenuIndexProvider)),
       bottomNavigationBar: BottomNavigationBar(
         elevation: 10,

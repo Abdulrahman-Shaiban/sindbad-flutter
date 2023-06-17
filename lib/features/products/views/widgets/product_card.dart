@@ -34,6 +34,7 @@ class ProductCard extends StatelessWidget {
           maxWidth: 140,
           minWidth: 100,
         ),
+        height: 100,
         margin: const EdgeInsets.only(top: 7, bottom: 7),
         decoration: ShapeDecoration(
           color: Colors.white,
