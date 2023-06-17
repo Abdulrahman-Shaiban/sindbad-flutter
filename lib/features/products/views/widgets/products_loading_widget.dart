@@ -7,7 +7,6 @@ import '../../../../core/styles/app_colors.dart';
 import '../../../../core/utils/constants/constants.dart';
 import '../../../../core/widgets/text_shimmer_widget.dart';
 
-
 class ProductsLoadingWidget extends ConsumerWidget {
   const ProductsLoadingWidget({
     Key? key,
@@ -94,11 +93,11 @@ class ProductsLoadingWidget extends ConsumerWidget {
                 parent: AlwaysScrollableScrollPhysics(),
               ),
               itemCount: 10,
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount:2,
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
                 crossAxisSpacing: 25,
                 mainAxisSpacing: 25,
-                childAspectRatio: 0.63.msbt0,
+                childAspectRatio: 0.67,
               ),
               itemBuilder: (context, index) => Container(
                 constraints: BoxConstraints(

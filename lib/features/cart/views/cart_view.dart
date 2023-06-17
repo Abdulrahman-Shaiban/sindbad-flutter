@@ -7,6 +7,7 @@ import 'package:sindebad/features/cart/views/widgets/cart_products_list_view.dar
 
 import '../../../core/styles/app_colors.dart';
 import '../../../core/utils/common_functions.dart';
+import '../../check_out/views/check_out_view.dart';
 import '../logic/cart_view_controller.dart';
 
 class CartView extends ConsumerStatefulWidget {
@@ -113,7 +114,13 @@ class _ProductsViewState extends ConsumerState<CartView> {
                         borderRadius: BorderRadius.circular(8.0),
                       ),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const CheckOutView()),
+                      );
+                    },
                     child: Center(
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,

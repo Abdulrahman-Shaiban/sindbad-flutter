@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:sindebad/core/styles/size_utils.dart';
 import 'package:sindebad/features/products/views/widgets/product_card.dart';
 
 import '../../data/models/product.dart';
@@ -52,11 +51,11 @@ class ProductsGridView extends ConsumerWidget {
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
                 itemCount: products.length,
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                   crossAxisSpacing: 20,
                   mainAxisSpacing: 15,
-                  childAspectRatio: 0.73.msbt0,
+                  childAspectRatio: 0.7,
                 ),
                 itemBuilder: (context, index) {
                   return ProductCard(

@@ -1,6 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:sindebad/features/favorites/views/widgets/product_change_favorite_status_widget.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../core/styles/app_colors.dart';
 import '../../../../core/utils/constants/app_assets.dart';
@@ -8,7 +8,12 @@ import '../../../../core/utils/constants/constants.dart';
 import '../../../../core/utils/squircle.helper.dart';
 import '../../../products/data/models/product.dart';
 
-class MerchantProductCard extends StatelessWidget {
+final productGridProvider = StateProvider<int>(
+  (ref) => 0,
+);
+bool checkBox = false;
+
+class MerchantProductCard extends ConsumerWidget {
   const MerchantProductCard({
     super.key,
     required this.products,
@@ -21,7 +26,7 @@ class MerchantProductCard extends StatelessWidget {
   final int index;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Container(
       constraints: const BoxConstraints(
         maxWidth: 140,
@@ -44,41 +49,59 @@ class MerchantProductCard extends StatelessWidget {
         children: [
           Expanded(
             flex: 3,
-            child: CachedNetworkImage(
-              imageUrl: products[index].productImages.isNotEmpty
-                  ? imagesBaseUrl +
-                      products[index].productImages.first.imagePath!
-                  : '',
-              placeholder: (context, _) => Image.asset(AppAssets.noImage),
-              imageBuilder: (context, imageProvider) => Container(
-                alignment: Alignment.topLeft,
-                padding: const EdgeInsets.all(5),
-                decoration: BoxDecoration(
-                  color: AppColors.white,
-                  image: DecorationImage(
-                    fit: BoxFit.fill,
-                    image: imageProvider,
+            child: Stack(
+              children: [
+                CachedNetworkImage(
+                  imageUrl: products[index].productImages.isNotEmpty
+                      ? imagesBaseUrl +
+                          products[index].productImages.first.imagePath!
+                      : '',
+                  placeholder: (context, _) => Image.asset(AppAssets.noImage),
+                  imageBuilder: (context, imageProvider) => Container(
+                    alignment: Alignment.topLeft,
+                    padding: const EdgeInsets.all(5),
+                    decoration: BoxDecoration(
+                      color: AppColors.white,
+                      image: DecorationImage(
+                        fit: BoxFit.fill,
+                        image: imageProvider,
+                      ),
+                      borderRadius: const BorderRadius.all(
+                        Radius.circular(radius),
+                      ),
+                    ),
                   ),
-                  borderRadius: const BorderRadius.all(
-                    Radius.circular(radius),
+                  errorWidget: (context, url, error) => Container(
+                    decoration: const BoxDecoration(
+                      color: AppColors.white,
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(radius),
+                      ),
+                    ),
+                    child: SizedBox(
+                        height: double.infinity,
+                        child: Image.asset(AppAssets.noImage)),
                   ),
                 ),
-                child: ProductChangeFavoriteStatusWidget(
-                  index: index,
-                  product: products[index],
-                ),
-              ),
-              errorWidget: (context, url, error) => Container(
-                decoration: const BoxDecoration(
-                  color: AppColors.white,
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(radius),
+                Positioned(
+                  top: -7,
+                  right: 13,
+                  child: SizedBox(
+                    height: 25,
+                    width: 25,
+                    child: CheckboxListTile(
+                      checkboxShape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(5)),
+                      activeColor: AppColors.primaryColor,
+                      checkColor: AppColors.primaryColor,
+                      value: checkBox,
+                      onChanged: (val) {
+                        checkBox = val!;
+                      },
+                    ),
                   ),
-                ),
-                child: SizedBox(
-                    height: double.infinity,
-                    child: Image.asset(AppAssets.noImage)),
-              ),
+                )
+              ],
             ),
           ),
           Expanded(

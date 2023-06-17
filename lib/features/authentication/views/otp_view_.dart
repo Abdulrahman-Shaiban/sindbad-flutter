@@ -23,12 +23,12 @@ class _OtpVerificationViewState extends ConsumerState<OtpView> {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   final TextEditingController otpController = TextEditingController();
   StreamController<ErrorAnimationType> errorController =
-  StreamController<ErrorAnimationType>();
+      StreamController<ErrorAnimationType>();
 
   @override
   void initState() {
     WidgetsBinding.instance.endOfFrame.then(
-          (_) async {},
+      (_) async {},
     );
 
     super.initState();
@@ -52,14 +52,13 @@ class _OtpVerificationViewState extends ConsumerState<OtpView> {
                         padding: EdgeInsets.only(top: 12.5.wsbt0),
                         child: Text(
                           AppLocalizations.of(context)!.otpWillBeSent,
-                          style: Theme
-                              .of(context)
+                          style: Theme.of(context)
                               .textTheme
                               .headlineSmall!
                               .copyWith(
-                              color: AppColors.white,
-                              fontSize: 19.0.sp,
-                              fontWeight: FontWeight.w400),
+                                  color: AppColors.white,
+                                  fontSize: 19.0.sp,
+                                  fontWeight: FontWeight.w400),
                         ),
                       ),
                     ),
@@ -68,7 +67,7 @@ class _OtpVerificationViewState extends ConsumerState<OtpView> {
               ),
               Padding(
                 padding:
-                const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                 child: Form(
                   key: formKey,
                   child: Column(
@@ -80,25 +79,17 @@ class _OtpVerificationViewState extends ConsumerState<OtpView> {
                       Text(
                         AppLocalizations.of(context)!.makeSureFromPhoneNumber,
                         style:
-                        Theme
-                            .of(context)
-                            .textTheme
-                            .headlineSmall!
-                            .copyWith(
-                          color: AppColors.lightBlack,
-                        ),
+                            Theme.of(context).textTheme.headlineSmall!.copyWith(
+                                  color: AppColors.lightBlack,
+                                ),
                       ),
                       Text(
                         AppLocalizations.of(context)!
                             .continueChangePasswordProcess,
                         style:
-                        Theme
-                            .of(context)
-                            .textTheme
-                            .headlineSmall!
-                            .copyWith(
-                          color: AppColors.lightBlack,
-                        ),
+                            Theme.of(context).textTheme.headlineSmall!.copyWith(
+                                  color: AppColors.lightBlack,
+                                ),
                       ),
                       const SizedBox(
                         height: 40,
@@ -120,30 +111,27 @@ class _OtpVerificationViewState extends ConsumerState<OtpView> {
                         // ]),
                         onSaved: (otp) {},
                         textStyle:
-                        Theme
-                            .of(context)
-                            .textTheme
-                            .headlineSmall!
-                            .copyWith(
-                          color: AppColors.grey,
-                          fontSize: 19.0.sp,
-                        ),
+                            Theme.of(context).textTheme.headlineSmall!.copyWith(
+                                  color: AppColors.grey,
+                                  fontSize: 19.0.sp,
+                                ),
                         animationType: AnimationType.fade,
                         pinTheme: PinTheme(
-                            fieldOuterPadding:
-                            EdgeInsets.symmetric(horizontal: 3.wsbt0),
-                            shape: PinCodeFieldShape.box,
-                            borderRadius: BorderRadius.circular(10),
-                            fieldHeight: 60,
-                            fieldWidth: 60,
-                            borderWidth: 0.0,
-                            activeFillColor: AppColors.lightGrey,
-                            inactiveFillColor: AppColors.lightGrey,
-                            inactiveColor: AppColors.lightGrey,
-                            errorBorderColor: Colors.red,
-                            activeColor: AppColors.lightGrey,
-                            selectedColor: AppColors.lightGrey,
-                            selectedFillColor: AppColors.lightGrey),
+                          fieldOuterPadding:
+                              EdgeInsets.symmetric(horizontal: 3.wsbt0),
+                          shape: PinCodeFieldShape.box,
+                          borderRadius: BorderRadius.circular(10),
+                          fieldHeight: 15.5.wsbt0,
+                          fieldWidth: 15.5.wsbt0,
+                          borderWidth: 0.0,
+                          activeFillColor: AppColors.lightGrey,
+                          inactiveFillColor: AppColors.lightGrey,
+                          inactiveColor: AppColors.lightGrey,
+                          errorBorderColor: Colors.red,
+                          activeColor: AppColors.lightGrey,
+                          selectedColor: AppColors.lightGrey,
+                          selectedFillColor: AppColors.lightGrey,
+                        ),
                         animationDuration: const Duration(milliseconds: 300),
                         enableActiveFill: true,
                         onCompleted: (v) {},
@@ -164,8 +152,7 @@ class _OtpVerificationViewState extends ConsumerState<OtpView> {
                           child: Center(
                             child: Text(
                               AppLocalizations.of(context)!.activate,
-                              style: Theme
-                                  .of(context)
+                              style: Theme.of(context)
                                   .textTheme
                                   .headlineSmall!
                                   .copyWith(color: AppColors.white),
@@ -199,13 +186,11 @@ class _OtpVerificationViewState extends ConsumerState<OtpView> {
                                   children: [
                                     Text(
                                       AppLocalizations.of(context)!.resendOtp,
-                                      style: Theme
-                                          .of(context)
+                                      style: Theme.of(context)
                                           .textTheme
                                           .bodyMedium!
                                           .copyWith(
-                                          color:
-                                          AppColors.secondarySwatch),
+                                              color: AppColors.secondarySwatch),
                                     ),
                                   ],
                                 ),
@@ -282,14 +267,14 @@ class QuarterCirclePainter extends CustomPainter {
     final double curveWidth = 100.wsbt0;
 
     final paint = Paint()
-    // parametrize
+      // parametrize
       ..color = fillColor
       ..style = PaintingStyle.fill;
 
     final path = Path()
-    // parametrize
+      // parametrize
       ..lineTo(curveWidth + 5, 0)
-    //main right curve:
+      //main right curve:
       ..cubicTo(
         curveWidth,
         15.hsbt0,

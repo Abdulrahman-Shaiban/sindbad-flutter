@@ -32,6 +32,10 @@ dependencies:
   dots_indicator: ^3.0.0
   flutter_rating_bar: ^4.0.1
   tab_indicator_styler: ^2.0.0
+  google_maps_flutter: ^2.2.5
+  map_picker: ^0.0.3
+  geocoding: ^2.0.5
+  location: ^4.4.0
 
   # UTILS
   intl: ^0.18.0

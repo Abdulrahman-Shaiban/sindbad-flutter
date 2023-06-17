@@ -6,7 +6,6 @@ import 'package:sindebad/core/styles/size_utils.dart';
 import '../../../../core/styles/app_colors.dart';
 import '../../../products/data/models/product.dart';
 import '../../logic/merchant_products_view_controller.dart';
-import '../../logic/offers_slider_widget_controller.dart';
 import 'merchant_product_card.dart';
 
 final tabIndexProvider = StateProvider<int>(
@@ -153,9 +152,57 @@ class _MerchantProductsGridViewState
                   ),
                 ),
               ),
-              const SizedBox(
-                height: 10,
+              const SizedBox(height: 10),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Container(
+                    height: 25,
+                    width: 100,
+                    padding: const EdgeInsets.symmetric(horizontal: 5),
+                    child: OutlinedButton(
+                      style: OutlinedButton.styleFrom(
+                          textStyle: Theme.of(context).textTheme.displaySmall,
+                          backgroundColor: AppColors.white,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                          side: const BorderSide(
+                            color: Colors.red,
+                          )),
+                      onPressed: () {},
+                      child: Center(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            const Icon(
+                              Icons.delete_forever_outlined,
+                              size: 15,
+                              color: Colors.red,
+                            ),
+                            const SizedBox(width: 3),
+                            Text(
+                              'حذف المحدد',
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyLarge!
+                                  .copyWith(
+                                    fontSize: 12,
+                                    color: Colors.red,
+                                  ),
+                              strutStyle: const StrutStyle(
+                                height: 1,
+                                forceStrutHeight: true,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
               ),
+              const SizedBox(height: 10),
               Expanded(
                 flex: 17,
                 child: GridView.builder(
@@ -164,11 +211,11 @@ class _MerchantProductsGridViewState
                     parent: AlwaysScrollableScrollPhysics(),
                   ),
                   itemCount: widget.products.length,
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
                     crossAxisSpacing: 20,
                     mainAxisSpacing: 15,
-                    childAspectRatio: 0.67.msbt0,
+                    childAspectRatio: 0.67,
                   ),
                   itemBuilder: (context, index) {
                     return MerchantProductCard(
