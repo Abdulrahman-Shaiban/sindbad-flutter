@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:sindebad/features/categories/views/list_all_categrories_view.dart';
 
 import '../../../core/styles/app_colors.dart';
 import '../logic/categories/category_state.dart';
@@ -40,15 +41,20 @@ class _ProductsViewState extends ConsumerState<CategoriesView> {
               ),
               Row(
                 children: [
-                  Text(
-                    'مشاهدة الكل',
-                    style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                          fontSize: 13,
-                          color: Colors.red,
-                        ),
-                    strutStyle: const StrutStyle(
-                      height: 1.2,
-                      forceStrutHeight: true,
+                  GestureDetector(
+                    onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const AllCategoriesListView(),
+                    )),
+                    child: Text(
+                      'مشاهدة الكل',
+                      style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                            fontSize: 13,
+                            color: Colors.red,
+                          ),
+                      strutStyle: const StrutStyle(
+                        height: 1.2,
+                        forceStrutHeight: true,
+                      ),
                     ),
                   ),
                   const Icon(

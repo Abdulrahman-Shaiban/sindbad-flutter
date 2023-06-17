@@ -206,5 +206,12 @@
   "endDate": "end data",
   "primary": "primary",
   "secondary": "secondary",
-  "noProductsToBeShown": "no products to be shown"
+  "noProductsToBeShown": "no products to be shown",
+  "freeShipping": "Free shipping",
+  "paymentMethods": "Payment methods",
+  "retrieval": "Retrieval",
+  "aboutUs": "About us",
+  "knowledgeBase": "Knowledge base",
+  "commonQuestions": "Common questions"
+
 }

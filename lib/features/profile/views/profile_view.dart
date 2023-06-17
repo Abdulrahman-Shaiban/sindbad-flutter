@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:sindebad/features/customer_service/views/customer_service_view.dart';
+import 'package:sindebad/features/customer_service/views/privacy_policy_view.dart';
 import 'package:sindebad/features/profile/views/widgets/profile_card.dart';
 
 import '../../../core/styles/app_colors.dart';
@@ -57,10 +59,16 @@ class _ProfileViewState extends ConsumerState<ProfileView> {
                 ProfileCard(
                   icon: 'noun_Policy_3324548',
                   name: AppLocalizations.of(context)!.privacyPolicy,
+                  onPressed: () => Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const PrivacyPolicyView(),
+                  )),
                 ),
                 ProfileCard(
                   icon: 'customer-service',
                   name: AppLocalizations.of(context)!.customersService,
+                  onPressed: () => Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const CustomerServiceView(),
+                  )),
                 ),
                 ProfileCard(
                   icon: 'invite',

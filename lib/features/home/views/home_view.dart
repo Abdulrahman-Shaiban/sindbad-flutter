@@ -6,6 +6,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:sindebad/core/styles/size_utils.dart';
 import 'package:sindebad/features/home/views/widgets/service_card.dart';
+
 import 'package:sindebad/features/supplier/views/suppliers_view.dart';
 
 import '../../../core/styles/app_colors.dart';
@@ -18,6 +19,9 @@ import '../../categories/views/categories_view.dart';
 import '../../merchant/logic/offers_slider_widget_controller.dart';
 import '../../merchant/views/widgets/offers_slider_widget.dart';
 import '../../products/views/widgets/products_horizontal_list_view.dart';
+import '../../shippment/views/free_shipping_view.dart';
+import '../../shippment/views/payment_methods_view.dart';
+import '../../shippment/views/retrieval_view.dart';
 import '../../supplier/logic/suppliers_view_controller.dart';
 
 class HomeView extends ConsumerStatefulWidget {
@@ -117,13 +121,19 @@ class _HomePageState extends ConsumerState<HomeView> {
               child: Padding(
                 padding: EdgeInsetsDirectional.only(
                     start: 4.wsbt0, end: 1.wsbt0, top: 4.wsbt0),
-                child: const SizedBox(
+                child: SizedBox(
                   height: 95,
                   child: Row(
                     children: [
-                      ServiceCard(icon: 'charg', name: 'شحن مجاني'),
-                      ServiceCard(icon: 'charg', name: 'طرق الدفع'),
-                      ServiceCard(icon: 're', name: 'امكانية الاسترداد'),
+                      ServiceCard(icon: 'charg', name: 'شحن مجاني', onPressed: (){
+                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => const FreeShippingView(),));
+                      },),
+                      ServiceCard(icon: 'charg', name: 'طرق الدفع', onPressed: (){
+                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => const PaymentMethodsView(),));
+                      },),
+                      ServiceCard(icon: 're', name: 'امكانية الاسترداد', onPressed: (){
+                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => const RetrievalView(),));
+                      },),
                     ],
                   ),
                 ),

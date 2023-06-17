@@ -84,7 +84,7 @@
   "orderDate": "تاريخ الطلب",
   "notifications": "تنبيهات",
   "home": "الرئيسية",
-  "profile": "الحساب الشخصي",
+  "profile": "الحساب",
   "editProfile": "تعديل البروفايل",
   "moreInfo": "معلومات اكثر",
   "showAll": "عرض الكل",
@@ -194,5 +194,12 @@
   "endDate": "تاريخ الانتهاء",
   "primary": "الرئيسية",
   "secondary": "الفرعية",
-  "noProductsToBeShown": "لا توجد لديك منتجات لعرضها"
+  "noProductsToBeShown": "لا توجد لديك منتجات لعرضها",
+  "freeShipping": "شحن مجاني",
+  "paymentMethods": "طرق الدفع",
+  "retrieval": "إمكانية الاسترداد",
+  "aboutUs": "من نحن",
+  "knowledgeBase": "قاعدة المعرفة",
+  "commonQuestions": "الأسئلة الشائعة"
+
 }

@@ -5,14 +5,13 @@ import 'package:flutter_svg/svg.dart';
 import '../../../../core/styles/app_colors.dart';
 
 class ProfileCard extends ConsumerWidget {
-  const ProfileCard({
-    Key? key,
-    required this.name,
-    required this.icon,
-  }) : super(key: key);
+  ProfileCard(
+      {Key? key, required this.name, required this.icon, this.onPressed})
+      : super(key: key);
 
   final String name;
   final String icon;
+  VoidCallback? onPressed;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -22,7 +21,7 @@ class ProfileCard extends ConsumerWidget {
       ),
       child: InkWell(
         borderRadius: BorderRadius.circular(15),
-        onTap: () {},
+        onTap: onPressed,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
