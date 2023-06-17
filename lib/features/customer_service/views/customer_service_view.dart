@@ -60,7 +60,10 @@ class _HomePageState extends ConsumerState<CustomerServiceView> {
                         color: Colors.grey.shade600,
                       ),
                 ),
-                trailing: const Icon(Icons.arrow_forward_ios_outlined),
+                trailing: const Icon(
+                  Icons.arrow_forward_ios_outlined,
+                  size: 20,
+                ),
                 onTap: () => Navigator.of(context).push(MaterialPageRoute(
                   builder: (context) => const AboutUsView(),
                 )),
@@ -89,7 +92,10 @@ class _HomePageState extends ConsumerState<CustomerServiceView> {
                         color: Colors.grey.shade600,
                       ),
                 ),
-                trailing: const Icon(Icons.arrow_forward_ios_outlined),
+                trailing: const Icon(
+                  Icons.arrow_forward_ios_outlined,
+                  size: 20,
+                ),
                 onTap: () => Navigator.of(context).push(MaterialPageRoute(
                   builder: (context) => const ContactUsView(),
                 )),
@@ -118,7 +124,10 @@ class _HomePageState extends ConsumerState<CustomerServiceView> {
                         color: Colors.grey.shade600,
                       ),
                 ),
-                trailing: const Icon(Icons.arrow_forward_ios_outlined),
+                trailing: const Icon(
+                  Icons.arrow_forward_ios_outlined,
+                  size: 20,
+                ),
                 onTap: () => Navigator.of(context).push(MaterialPageRoute(
                   builder: (context) => const KnowledgeBaseView(),
                 )),
@@ -147,7 +156,10 @@ class _HomePageState extends ConsumerState<CustomerServiceView> {
                         color: Colors.grey.shade600,
                       ),
                 ),
-                trailing: const Icon(Icons.arrow_forward_ios_outlined),
+                trailing: const Icon(
+                  Icons.arrow_forward_ios_outlined,
+                  size: 20,
+                ),
                 onTap: () => Navigator.of(context).push(MaterialPageRoute(
                   builder: (context) => const CommonQuestionView(),
                 )),

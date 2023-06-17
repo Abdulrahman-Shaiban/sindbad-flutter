@@ -9,6 +9,7 @@ import 'package:sindebad/features/home/views/home_menu_view.dart';
 import 'core/routes/app_pages.dart';
 import 'core/styles/app_themes.dart';
 import 'core/styles/size_utils.dart';
+import 'features/authentication/views/login_view.dart';
 
 class SindebadApp extends ConsumerStatefulWidget {
   const SindebadApp({
@@ -44,7 +45,7 @@ class _SindebadAppState extends ConsumerState<SindebadApp> {
           theme: AppThemes.lightTheme,
           home: Builder(builder: (BuildContext context) {
             SizeUtils.init(context);
-            return const HomeMenuView();
+            return const LoginView();
           }),
           routes: AppPages.pages,
           // debugShowCheckedModeBanner: false,
