@@ -1,17 +1,13 @@
-import 'package:cached_network_image/cached_network_image.dart';
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:sindebad/core/styles/size_utils.dart';
+import 'package:sindebad/features/home/views/search_view.dart';
 import 'package:sindebad/features/home/views/widgets/service_card.dart';
-
 import 'package:sindebad/features/supplier/views/suppliers_view.dart';
 
 import '../../../core/styles/app_colors.dart';
-import '../../../core/utils/constants/app_assets.dart';
-import '../../../core/utils/constants/constants.dart';
 import '../../../core/utils/squircle.helper.dart';
 import '../../cart/views/widgets/cart_icon_widget.dart';
 import '../../categories/logic/categories_view_controller.dart';
@@ -125,15 +121,33 @@ class _HomePageState extends ConsumerState<HomeView> {
                   height: 95,
                   child: Row(
                     children: [
-                      ServiceCard(icon: 'charg', name: 'شحن مجاني', onPressed: (){
-                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => const FreeShippingView(),));
-                      },),
-                      ServiceCard(icon: 'charg', name: 'طرق الدفع', onPressed: (){
-                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => const PaymentMethodsView(),));
-                      },),
-                      ServiceCard(icon: 're', name: 'امكانية الاسترداد', onPressed: (){
-                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => const RetrievalView(),));
-                      },),
+                      ServiceCard(
+                        icon: 'charg',
+                        name: 'شحن مجاني',
+                        onPressed: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => const FreeShippingView(),
+                          ));
+                        },
+                      ),
+                      ServiceCard(
+                        icon: 'charg',
+                        name: 'طرق الدفع',
+                        onPressed: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => const PaymentMethodsView(),
+                          ));
+                        },
+                      ),
+                      ServiceCard(
+                        icon: 're',
+                        name: 'امكانية الاسترداد',
+                        onPressed: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => const RetrievalView(),
+                          ));
+                        },
+                      ),
                     ],
                   ),
                 ),
@@ -186,7 +200,11 @@ class TopClipperWidget extends StatelessWidget {
             child: Column(
               children: [
                 GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const SearchView(),
+                    ));
+                  },
                   child: Container(
                     margin: const EdgeInsets.symmetric(horizontal: 20),
                     padding: const EdgeInsets.symmetric(horizontal: 15),
@@ -223,9 +241,7 @@ class TopClipperWidget extends StatelessWidget {
                 const Expanded(
                   flex: 17,
                   child: Stack(
-                    children: [
-                      OffersSliderWidget()
-                    ],
+                    children: [OffersSliderWidget()],
                   ),
                 ),
               ],

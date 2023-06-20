@@ -2,14 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:sindebad/features/home/views/home_menu_view.dart';
+import 'package:sindebad/features/authentication/views/login_view.dart';
 
 // import 'package:flutter_validation/flutter_validation.dart';
 
 import 'core/routes/app_pages.dart';
 import 'core/styles/app_themes.dart';
 import 'core/styles/size_utils.dart';
-import 'features/authentication/views/login_view.dart';
 
 class SindebadApp extends ConsumerStatefulWidget {
   const SindebadApp({
